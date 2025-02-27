@@ -19,17 +19,21 @@ permettant un développement rapide et cohérent sur différents environnements.
 
 dans le fichier vite.config.js ou .ts remplacer tout par:
 ```jsx
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
 export default defineConfig({
   server: {
-    host: '0.0.0.0',
-    port: 5173
+    watch: {
+      usePolling: true,
+    },
+    host: "0.0.0.0",
+    port: 5173,
   },
   plugins: [react()],
-})
+});
+
 ```
 
 `docker-compose up --build -d`
@@ -77,17 +81,21 @@ docker run -it --rm -v ${PWD}/my-app:/app -w /app node:18-alpine npm install
 **E modification des port dans la config de vite **
 dans le fichier vite.congig.js ou (.ts) dans le dossier my-app ont remplace le tout par
 ```javascript
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
 export default defineConfig({
   server: {
-    host: '0.0.0.0',
-    port: 5173
+    watch: {
+      usePolling: true,
+    },
+    host: "0.0.0.0",
+    port: 5173,
   },
   plugins: [react()],
-})
+});
+
 
 ```
 
